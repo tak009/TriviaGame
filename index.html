@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trivia Game!</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="row text-center m-1">
+    <div class="col-md-12 centered">
+      <button id="start-btn" class="btn btn-success btn-lg">Start</button>
+      <div id="trivia-view" class="bg-white hidden">
+        <header>
+          <h1 class="p-3">Geography Trivia!</h1>
+        </header>
+        <div id="time-remaining"></div>
+        <div id="trivia-body" class="trivia-format">
+          <div id="question"></div>
+          <div class="choices"></div>
+        </div>
+        <div id="trivia-result-wrong" class="hidden">
+          <div class="text-danger">Nope !!!</div>
+          <div>The Correct Answer was : <span class="correct_answer font-weight-bold"></span></div>
+          <div class="img"></div>
+        </div>
+        <div id="trivia-result-correct" class="hidden">
+          <div class="text-success">Correct!</div>
+          <div class="img"></div>
+        </div>
+        <div id="trivia-summary" class="hidden">
+          <div><h4>All done, here is how you did!</h4></div>
+          <div>Correct Answers: <span class="correct"></span></div>
+          <div>Wrong Answers: <span class="wrong"></span></div>
+          <div>Unanswered: <span class="timeout"></span></div>
+          <button id="restart-btn" class="btn btn-success btn-lg mt-5">Start Over?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="assets/javascript/app.js">
+  </script>
+
+</body>
+
+</html>

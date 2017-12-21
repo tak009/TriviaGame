@@ -1,0 +1,54 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url("../images/map.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+h1 {
+  font-family: 'Bungee', cursive;
+  color: tomato;
+}
+
+div {
+  padding: 10px;
+}
+
+div.img
+{
+  width: 300px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trivia-format {
+  padding-bottom: 20px;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.choice
+{
+  cursor: pointer;
+}
+
+.choice:hover
+{
+  background-color: turquoise;
+}
