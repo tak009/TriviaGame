@@ -1,11 +1,11 @@
 // Declare global variables
 var triviaArr = ["q1", "q2", "q3", "q4", "q5"];
 var triviaObj = {
-  q1: { question: "What is Earth's largest continent?", choices: ["ANTARCTICA", "AFRICA", "ASIA", "EUROPE"], answer: 3, correct_img:'assets/images/asia.jpg', wrong_img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRczH0iFmONdZoqz59XtQ_kNpGXwSTVA0mU0-jZA8BShJ9efe5gBQ'},
-  q2: { question: "What country has the most natural lakes?", choices: ["AUSTRALIA", "CANADA", "INDIA", "UNITED STATES"], answer: 2, correct_img:'assets/images/canada_lakes.jpg', wrong_img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRczH0iFmONdZoqz59XtQ_kNpGXwSTVA0mU0-jZA8BShJ9efe5gBQ'},
-  q3: { question: "What is the only sea without any coasts?", choices: ["ADRIATIC SEA", "CELEBES SEA", "MEDITERRANEAN SEA", "SARGASSO SEA"], answer: 4, correct_img:'assets/images/sargasso_sea.jpg', wrong_img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRczH0iFmONdZoqz59XtQ_kNpGXwSTVA0mU0-jZA8BShJ9efe5gBQ'},
-  q4: { question: "What is the driest place on Earth?", choices: ["ATACAMA DESERT", "MCMURDO, ANTARCTICA", "SAHARA DESERT", "KUFRA, LIBYA"], answer: 2, correct_img:'assets/images/macmurdo.jpg', wrong_img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRczH0iFmONdZoqz59XtQ_kNpGXwSTVA0mU0-jZA8BShJ9efe5gBQ'},
-  q5: { question: "What African country served as the setting for Tatooine in Star Wars?", choices: ["GABON", "GHANA", "TUNISIA", "ETHIOPIA"], answer: 3, correct_img:'assets/images/tataouine.jpg', wrong_img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRczH0iFmONdZoqz59XtQ_kNpGXwSTVA0mU0-jZA8BShJ9efe5gBQ'},
+  q1: { question: "What is Earth's largest continent?", choices: ["ANTARCTICA", "AFRICA", "ASIA", "EUROPE"], answer: 3, correct_img:'assets/images/asia.jpg'},
+  q2: { question: "What country has the most natural lakes?", choices: ["AUSTRALIA", "CANADA", "INDIA", "UNITED STATES"], answer: 2, correct_img:'assets/images/canada_lakes.jpg'},
+  q3: { question: "What is the only sea without any coasts?", choices: ["ADRIATIC SEA", "CELEBES SEA", "MEDITERRANEAN SEA", "SARGASSO SEA"], answer: 4, correct_img:'assets/images/sargasso_sea.jpg'},
+  q4: { question: "What is the driest place on Earth?", choices: ["ATACAMA DESERT", "MCMURDO, ANTARCTICA", "SAHARA DESERT", "KUFRA, LIBYA"], answer: 2, correct_img:'assets/images/macmurdo.jpg'},
+  q5: { question: "What African country served as the setting for Tatooine in Star Wars?", choices: ["GABON", "GHANA", "TUNISIA", "ETHIOPIA"], answer: 3, correct_img:'assets/images/tataouine.jpg'}
 };
 
 var current_q = -1;
@@ -14,7 +14,6 @@ var question;
 var choices;
 var answer;
 var correct_img;
-// var wrong_img;
 var intervalId;
 var score = {'correct':0, 'wrong':0, 'unanswered':0};
 
@@ -39,7 +38,6 @@ function startTriviaGame(){
   choices = null;
   answer = null;
   correct_img = null;
-  // wrong_img = null;
   intervalId = null;
   score = {'correct':0, 'wrong':0, 'unanswered':0};
 
@@ -67,7 +65,6 @@ function displayQuestion(){
   choices = triviaObj[questionSelected].choices;
   answer = triviaObj[questionSelected].answer;
   correct_img = triviaObj[questionSelected].correct_img;
-  // wrong_img = triviaObj[questionSelected].wrong_img;
 
   console.log("current_q:", current_q);
   console.log("questionSelected:", questionSelected);
@@ -118,7 +115,6 @@ function showResult(is_correct){
   else{
     $('#trivia-result-wrong span.correct_answer').html(choices[answer-1]);
     $('#trivia-result-wrong div.img').css('background-image', 'url(' + correct_img + ')');
-    // $('#trivia-result-wrong div.img').css('background-image', 'url(' + wrong_img + ')');
     $('#trivia-result-wrong').show();
   }
 
@@ -166,41 +162,3 @@ function timeDecrement() {
     showResult(false);
   }
 }
-
-// function getTriviaQuestion(){
-//   var questionSelected = triviaArr[Math.floor(Math.random() * triviaArr.length)];
-//   question = triviaObj[questionSelected].question;
-//   choices = triviaObj[questionSelected].choices;
-//   answer = triviaObj[questionSelected].answer;
-//   console.log("question", questionSelected);
-//
-//   $("#question").html("<h4>" + question + "</h4>");
-//
-//   for(var i = 0; i < choices.length; i++){
-//     var list = $("<p>");
-//     list.attr("id","choice-" + (i+1));
-//     list.text(choices[i]);
-//     $(".choices").append(list);
-//
-//     // // Set time out per question
-//     // runTime(); Move out of FOR LOOP
-//   }
-//   runTime();
-// }
-
-
-
-
-
-
-// Show relevant picture when player answers correct
-// If the player selects the correct answer, show a screen congratulating them for choosing the right option. After a few seconds, display the next question -- do this without user input.
-
-// When time's up, display time-out message and show the correct answer
-
-
-// Display correct answer if player selected wrong answer and show the correct answer
-
-// Show new question after a few seconds
-
-// Show number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
